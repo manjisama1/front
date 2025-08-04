@@ -4,20 +4,165 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>𝗧𝗘𝗔𝗠 𝗣𝗜𝗞𝗨 - Premium Links</title>
-  <link rel="stylesheet" href="style.css" />
 
-  <!-- ✅ Google AdSense Script -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4773335644003125"
     crossorigin="anonymous"></script>
+
+  <!-- Style -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(145deg, #0f0f1a, #1c1c2e);
+      color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    header {
+      margin: 40px 0 20px;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    .controls {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    input, select, button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #22283d;
+      color: #f5f5f5;
+      transition: background 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      background: #2f3655;
+      outline: none;
+    }
+
+    button {
+      background: #ff5c8a;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff3c6e;
+    }
+
+    .results {
+      width: 100%;
+      max-width: 800px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .link-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .link-card h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    .link-card p {
+      margin: 8px 0;
+      color: #ccc;
+    }
+
+    .link-card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #00c896;
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .link-card a:hover {
+      background: #00a57c;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .ad {
+      margin: 20px auto;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 🔝 Top Banner Ad -->
-  <div class="ad ad-top">
+  <!-- 🔝 Top Ad -->
+  <div class="ad">
     <ins class="adsbygoogle"
       style="display:block"
       data-ad-client="ca-pub-4773335644003125"
-      data-ad-slot="1234567890" <!-- 🔁 Use your actual ad slot -->
+      data-ad-slot="1234567890"
       data-ad-format="auto"
       data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -34,21 +179,11 @@
     <button onclick="searchLinks()">Search</button>
   </section>
 
-  <section id="results" class="results"></section>
-
-  <!-- 🧃 Mid Content Ad (optional) -->
-  <div class="ad ad-mid">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-4773335644003125"
-      data-ad-slot="2345678901"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
+  <!-- 🎯 Results -->
+  <section id="results" class="results" data-aos="fade-up"></section>
 
   <!-- 🔚 Footer Ad -->
-  <div class="ad ad-footer">
+  <div class="ad">
     <ins class="adsbygoogle"
       style="display:block"
       data-ad-client="ca-pub-4773335644003125"
@@ -62,6 +197,9 @@
     <p>&copy; 2025 Team PIKU | All rights reserved</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
   <script src="script.js"></script>
 </body>
 </html>
